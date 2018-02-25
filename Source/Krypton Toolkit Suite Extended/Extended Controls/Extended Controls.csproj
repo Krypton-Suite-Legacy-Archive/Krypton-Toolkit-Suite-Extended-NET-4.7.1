@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C9153E4-CDC4-44C9-9794-1D144FE87A1F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExtendedControls</RootNamespace>
+    <AssemblyName>Extended Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.70.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Required\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking, Version=4.70.534.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Required\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.70.533.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Required\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon, Version=4.70.533.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Required\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.70.544.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Required\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace, Version=4.70.534.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Required\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Code\KryptonMessageBoxBase.cs" />
+    <Compile Include="Base\Code\PI.cs" />
+    <Compile Include="Base\Code\UtilityMethods.cs" />
+    <Compile Include="Base\UI\KryptonFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\UI\KryptonFormBase.Designer.cs">
+      <DependentUpon>KryptonFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\UI\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\UI\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations\Globals.cs" />
+    <Compile Include="ExtendedToolkit\Controls\ExtendedProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendedToolkit\Controls\KryptonUACShieldButton.cs" />
+    <Compile Include="ExtendedToolkit\Controls\KryptonWaterMarkTextBox.cs" />
+    <Compile Include="ExtendedToolkit\Messageboxes\Classes\Globals.cs" />
+    <Compile Include="ExtendedToolkit\Messageboxes\UI\ExtendedKryptonMessagebox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendedToolkit\Messageboxes\UI\ExtendedKryptonMessagebox.Designer.cs">
+      <DependentUpon>ExtendedKryptonMessagebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedToolkit\SystemDialogs\KryptonFolderPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendedToolkit\SystemDialogs\KryptonOpenFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendedToolkit\SystemDialogs\KryptonSaveFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendedToolkit\ToolstripControls\KryptonToolStripTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendedToolkit\ToolstripControls\KryptonToolStripWaterMarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtendedToolkit\ToolstripControls\ToolStripMenuItemUACSheld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notes\IMPORTANT.txt" />
+    <None Include="Resources\help2.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\sign_warning.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\if_Symbol-Delete_49260.png" />
+    <None Include="Resources\if_Symbol-Exclamation_49262.png" />
+    <None Include="Resources\if_Symbol-Help_49263.png" />
+    <None Include="Resources\if_Symbol-Information_49264.png" />
+    <None Include="Resources\if_Symbol-Restricted_49266.png" />
+    <None Include="Resources\if_Symbol-Stop_49267.png" />
+    <None Include="Resources\Symbol-Error.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\if_Symbol-Check_49258.png" />
+    <None Include="Resources\if_Symbol-Error_49261.png" />
+    <Content Include="ToolboxBitmaps\KryptonMessageBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Global Utilities\Global Utilities.csproj">
+      <Project>{2cdbe9aa-deb3-4a7b-97d7-7dc665418e92}</Project>
+      <Name>Global Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\UI\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendedToolkit\Messageboxes\UI\ExtendedKryptonMessagebox.resx">
+      <DependentUpon>ExtendedKryptonMessagebox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
